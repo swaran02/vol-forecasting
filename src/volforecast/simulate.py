@@ -14,7 +14,7 @@ def simulate_const_vol(sigma : float, n_days : int, n_steps : int, rng) -> np.nd
     moves = rng.normal(0, sigma*np.sqrt(dt), size = (n_days, n_steps) )
     log_prices = np.cumsum(moves, axis=1)
     zer = np.zeros((n_days,1))
-    log_prices = np.hstack([zer,moves])
+    log_prices = np.hstack([zer,log_prices])
 
     return log_prices
 

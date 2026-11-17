@@ -1,13 +1,6 @@
-import numpy as np
-rng = np.random.default_rng(42)
-moves = rng.normal(0, 0.01, size=(2, 4))
-print(moves)
-
-a = np.array([[1, 2, 3],
-              [4, 5, 6]])
-
-a = np.cumsum(a, axis=1)
-
-b = np.zeros((2,1))
-c = np.hstack([b,a])
-print(c)
+r1 = 0.00304717 - 0
+r2 = -0.00735267 - 0.00304717
+r3 = 0.00015184 - (-0.00735267)
+r4 = 0.00955749 - 0.00015184
+rv_day1 = r1**2 + r2**2 + r3**2 + r4**2
+print(rv_day1)
