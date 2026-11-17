@@ -1,5 +1,4 @@
 import numpy as np
-from simulate import simulate_const_vol
 
 def realized_variance(log_prices: np.ndarray, step: int) -> np.ndarray:
     """
@@ -17,8 +16,3 @@ def realized_variance(log_prices: np.ndarray, step: int) -> np.ndarray:
     rv = np.sum(squared, axis=1)
     return rv
 
-
-rng = np.random.default_rng(42)
-log_prices = simulate_const_vol(sigma=0.02, n_days=2, n_steps=4, rng=rng)
-print(realized_variance(log_prices, step=1))
-print(realized_variance(log_prices, step=2))

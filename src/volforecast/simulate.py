@@ -17,9 +17,3 @@ def simulate_const_vol(sigma : float, n_days : int, n_steps : int, rng) -> np.nd
     log_prices = np.hstack([zer,log_prices])
 
     return log_prices
-
-
-
-
-rng = np.random.default_rng(42)
-print(simulate_const_vol(sigma=0.02, n_days=2, n_steps=4, rng=rng))
