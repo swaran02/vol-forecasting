@@ -17,3 +17,11 @@ def simulate_const_vol(sigma : float, n_days : int, n_steps : int, rng) -> np.nd
     log_prices = np.hstack([zer,log_prices])
 
     return log_prices
+
+def add_microstructure_noise(log_prices: np.ndarray, omega: float,rng) -> np.ndarray:
+    """
+    Add i.i.d N(0, omega^2) niose to every observed log price,
+    """
+
+    noise = rng.normal(0, omega, size=log_prices.shape)
+    return log_prices + noise
